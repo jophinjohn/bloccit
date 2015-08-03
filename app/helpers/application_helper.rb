@@ -1,5 +1,5 @@
 module ApplicationHelper
       def my_name
-        p 'Jophin'
+        'Jophin'
     end
 end
