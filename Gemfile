@@ -11,6 +11,7 @@ group :production do
  
  group :development do
    gem 'sqlite3'
+   gem 'annotate'
  end
  # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -46,3 +47,4 @@ gem 'bootstrap-sass'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+ruby "2.2.1"
