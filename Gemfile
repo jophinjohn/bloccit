@@ -48,3 +48,5 @@ gem 'bootstrap-sass'
 # gem 'debugger', group: [:development, :test]
 
 ruby "2.2.1"
+gem 'pry-rails', :group => :development
+gem 'faker'
