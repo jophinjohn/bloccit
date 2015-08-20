@@ -14,8 +14,8 @@ require 'faker'
      body:   Faker::Lorem.paragraph
    )
  end
- posts = Post.all
- comments = Comment.all
+posts=Post.all
+comments=Comment.all
  
  # Create Comments
  100.times do
@@ -24,23 +24,28 @@ require 'faker'
      body: Faker::Lorem.paragraph
    )
  end
- if posts.any?{|item| item[:title]=="Jophin's post" && item[:body] == "Hello Jophin. This is your first post"}
+
+ if posts.find_by title: 'Jophinsposts'  && if posts.find_by body: 'Thisisthefirstposts'
    puts "Cannot create unique post"
  else
    checkpost = Post.create!(
-     title: "Jophin's post",
-     body: "Hello Jophin. This is your first post"
+     title: "Jophinsposts",
+     body: "Thisisthefirstposts"
    )
  end 
+ end
  
- if comments.any?{|item| item[:post_id]== checkpost && item[:body] == "Hello Jophin. This is your first comment"}
+ if comments.find_by body: 'Thisisthefirstcomment'
    puts "Cannot create unique comment"
  else
    Comment.create!(
     post: checkpost,
-    body: "Hello Jophin. This is your first comment"
+    body: "Thisisthefirstcomment"
    ) 
  end
+ 
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+
+
