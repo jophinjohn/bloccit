@@ -24,16 +24,15 @@ comments=Comment.all
      body: Faker::Lorem.paragraph
    )
  end
-
- if posts.find_by title: 'Jophinsposts'  && if posts.find_by body: 'Thisisthefirstposts'
-   puts "Cannot create unique post"
+ if posts.find_by title: 'Jophinsposts', body: 'Thisisthefirstposts'
+  puts "Cannot create unique post"
  else
    checkpost = Post.create!(
      title: "Jophinsposts",
      body: "Thisisthefirstposts"
    )
  end 
- end
+
  
  if comments.find_by body: 'Thisisthefirstcomment'
    puts "Cannot create unique comment"
