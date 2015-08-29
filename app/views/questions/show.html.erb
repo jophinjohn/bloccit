@@ -1,5 +1,8 @@
 
 <h1><%= @question.title %></h1>
 <p><%= @question.body %></p>
-<%= link_to "Edit", edit_question_path(@question), class: 'btn btn-success' %>
-# show link to resolve also? or status question.resolution?
+<p><%= @question.resolved %></p>
+<p><%= @resolution_status %></p>
+
+  
+<%= link_to "Edit the question", edit_question_path(@question), class: 'btn btn-success' %>

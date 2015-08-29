@@ -5,6 +5,12 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    
+    if @question.resolved 
+      @resolution_status = "Resolved"
+    else
+      @resolution_status = "Not resolved"
+    end
   end
 
   def new
@@ -26,14 +32,6 @@ class QuestionsController < ApplicationController
     end
   end
   
-  def resolution
-    @question=Question.find(params[:id])
-    if @question.resolved
-      "Question is :Resolved"
-    else 
-      "Question is :Not Resolved"
-    end  
-  end
   def update
     @question=Question.find(params[:id])
     if @question.update_attributes(params.require(:question).permit(:title, :body, :resolved))
