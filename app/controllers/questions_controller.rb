@@ -5,12 +5,6 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    
-    if @question.resolved 
-      @resolution_status = "Resolved"
-    else
-      @resolution_status = "Not resolved"
-    end
   end
 
   def new

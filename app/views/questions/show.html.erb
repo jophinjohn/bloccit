@@ -3,6 +3,11 @@
 <p><%= @question.body %></p>
 <p><%= @question.resolved %></p>
 <p><%= @resolution_status %></p>
-
+   <% if @question.resolved %>
+     <%= @resolution_status = "Resolved" %>
+    <% else %>
+      <%= @resolution_status = "Not resolved" %>
+    <% end %>
+      
   
 <%= link_to "Edit the question", edit_question_path(@question), class: 'btn btn-success' %>
