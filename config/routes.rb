@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :users
+=======
+  
+
+>>>>>>> assignment35
    resources :posts  
+   resources :questions
    get 'about' => 'welcome#about'
   
    root to: 'welcome#index'
