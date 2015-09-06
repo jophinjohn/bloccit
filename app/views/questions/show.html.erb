@@ -1,11 +1,15 @@
 
 <h1><%= @question.title %></h1>
 <p><%= @question.body %></p>
-   <% if @question.resolved %>
-     <%= @resolution_status = "Resolved" %>
+     
+    
+  <p> 
+    <% if @question.resolved %>
+      Resolved
     <% else %>
-      <%= @resolution_status = "Not resolved" %>
+      Not resolved
     <% end %>
+  </p>
       
   
 <%= link_to "Edit the question", edit_question_path(@question), class: 'btn btn-success' %>
