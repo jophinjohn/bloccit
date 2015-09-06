@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :flashattack
    protected
-   def flash_attack
+   def flashattack
     flash[:alert] = "Action will be performed"  
    end
    def configure_permitted_parameters

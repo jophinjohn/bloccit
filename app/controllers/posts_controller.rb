@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :flash_attack, :only => [:index, :new]
+  skip_before_action :flashattack, :only => [:index, :new]
   def index
     @posts = Post.all
   end
