@@ -11,7 +11,7 @@ group :production do
  
  group :development do
    gem 'sqlite3'
-   gem 'annotate'
+  
  end
  # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -36,8 +36,8 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 
 
-gem "byebug"
 gem 'annotate'
+gem 'figaro', '1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
