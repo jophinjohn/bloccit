@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150830002224) do
-=======
-ActiveRecord::Schema.define(version: 20150828061330) do
->>>>>>> assignment35
 
   create_table "advertisements", force: true do |t|
     t.string   "title"
@@ -49,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150828061330) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email",                  default: "", null: false
@@ -73,6 +68,4 @@ ActiveRecord::Schema.define(version: 20150828061330) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-=======
->>>>>>> assignment35
 end
