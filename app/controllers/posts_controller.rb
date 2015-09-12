@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = policy_scope(Post)
     authorize @posts
   end
 
@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     authorize @post
-
   end
   def create
      @post = Post.new(params.require(:post).permit(:title, :body))
@@ -25,7 +24,6 @@ class PostsController < ApplicationController
        render :new
      end
   end
-
 
   def edit
      @post = Post.find(params[:id])
