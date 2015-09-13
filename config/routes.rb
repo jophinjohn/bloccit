@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
-
    devise_for :users
 
 
    resources :questions
    resources :users
    resources :topics do
-     resources :posts, except: [:index]
+     resources :posts, except: [:index]do
+       resources :summary, except: [:edit, :update]
+     end  
    end
    get 'about' => 'welcome#about'
   
