@@ -9,11 +9,21 @@ Rails.application.routes.draw do
    resources :users
    resources :topics do
      resources :posts do
-       get 'summary', to: 'summaries#show' 
+       #get 'summary', to: 'summaries#show' 
        post 'summary', to: 'summaries#create'
        get 'summary', to: 'summaries#new'
-     end  
-   end
+       #get 'summary', to: 'summaries#show' 
+     end
+    end
+    
+    resources :posts do
+       get 'summary', to: 'summaries#show' 
+       
+     
+    end
+    
+    
+     
    get 'about' => 'welcome#about'
   
    root to: 'welcome#index'
