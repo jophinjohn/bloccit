@@ -16,8 +16,8 @@ Rails.application.routes.draw do
      end
     end
     
-   # resources :posts do
-    #   get 'summary', to: 'summaries#show' 
+    #resources :posts do
+     #  get 'summary', to: 'summaries#show' 
        
      
     #end
