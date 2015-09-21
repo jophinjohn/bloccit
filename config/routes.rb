@@ -9,18 +9,15 @@ Rails.application.routes.draw do
    resources :users
    resources :topics do
      resources :posts do
-       get 'summary', to: 'summaries#show' 
-       post 'summary', to: 'summaries#create'
-       get 'summary', to: 'summaries#new'
-       #get 'summary', to: 'summaries#show' 
+      resource :summary, only: [:show, :create , :new]
      end
     end
     
-    #resources :posts do
-     #  get 'summary', to: 'summaries#show' 
+    resources :posts do
+       get 'summary', to: 'summaries#show' 
        
      
-    #end
+    end
     
     
      
