@@ -7,7 +7,7 @@
        <%= @post.user.name %>
      </small>
       <small>
-            <%= image_tag(@post.image.tiny.url) if @post.image? %>
+            <%= image_tag(@post.image.profile.url) if @post.image? %>
             submitted <%= time_ago_in_words(@post.created_at) %> ago by
             <%= @post.user.name %>
         </small>
