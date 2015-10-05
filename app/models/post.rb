@@ -20,4 +20,7 @@ end
 #  body       :text
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
+#  topic_id   :integer
+#  image      :string(255)
 #
