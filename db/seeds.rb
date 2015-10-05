@@ -36,7 +36,7 @@ require 'faker'
  # Create Posts
  50.times do
    Post.create!(
-     user:   users.sample,
+     #user:   users.sample,
      title:  Faker::Lorem.sentence,
      topic:  topics.sample,
      body:   Faker::Lorem.paragraph
