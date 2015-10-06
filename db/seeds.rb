@@ -36,7 +36,7 @@ require 'faker'
  # Create Posts
  50.times do
    Post.create!(
-     #user:   users.sample,
+     user:   users.sample,
      title:  Faker::Lorem.sentence,
      topic:  topics.sample,
      body:   Faker::Lorem.paragraph
@@ -47,10 +47,11 @@ require 'faker'
  # Create Comments
  100.times do
    Comment.create!(
-     # user: users.sample,   # we have not yet associated Users with Comments
+     user: users.sample,   # we have not yet associated Users with Comments
      post: posts.sample,
      body: Faker::Lorem.paragraph
    )
+=begin
    # Create an admin user
    admin = User.new(
    name:     'Admin User',
@@ -80,7 +81,7 @@ require 'faker'
   member.skip_confirmation!
   member.save!
 
-  
+=end
  end
    
  puts "Seed finished"
