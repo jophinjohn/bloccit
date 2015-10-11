@@ -51,7 +51,6 @@ require 'faker'
      post: posts.sample,
      body: Faker::Lorem.paragraph
    )
-=begin
    # Create an admin user
    admin = User.new(
    name:     'Admin User',
@@ -62,7 +61,6 @@ require 'faker'
    admin.skip_confirmation!
    admin.save!
  
-  # Create a moderator
   moderator = User.new(
   name:     'Moderator User',
   email:    'moderator@example.com',
@@ -72,7 +70,6 @@ require 'faker'
   moderator.skip_confirmation!
   moderator.save!
  
-  # Create a member
   member = User.new(
   name:     'Member User',
   email:    'member@example.com',
@@ -81,7 +78,7 @@ require 'faker'
   member.skip_confirmation!
   member.save!
 
-=end
+
  end
    
  puts "Seed finished"

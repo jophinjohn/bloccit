@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707195903) do
+ActiveRecord::Schema.define(version: 20151005192808) do
 
   create_table "advertisements", force: true do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140707195903) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "avatar"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
