@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
-
+  before_action :load_post_and_vote
+ 
   def up_vote
     update_vote!(1)
     redirect_to :back
@@ -17,10 +18,10 @@ class VotesController < ApplicationController
     @vote = @post.votes.where(user: current_user).first
   end
   
-  def update_vote!(new_value)
+  def update_vote(new_value)
     if @vote
       authorize @vote, :update?
-      @vote.update_attribute(:value, new_value)
+      @vote.update_attributes(:value, new_value)
     else
       @vote = current_user.votes.build(value: new_value, post: @post)
       authorize @vote, :create?
