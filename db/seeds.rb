@@ -55,6 +55,7 @@ require 'faker'
      post: posts.sample,
      body: Faker::Lorem.paragraph
    )
+   end
    # Create an admin user
    admin = User.new(
    name:     'Admin User',
@@ -83,7 +84,7 @@ require 'faker'
   member.save!
 
 
- end
+ 
    
  puts "Seed finished"
  puts "#{Post.count} posts created"
