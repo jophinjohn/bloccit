@@ -26,10 +26,10 @@ class Post < ActiveRecord::Base
     
     private
     def create_vote
-      user.votes.create(self.post(value: 1))
+      user.votes.create(value: 1, post: self)
     end
     default_scope { order('rank DESC') }
-    
+  
     
     validates :title, length: { minimum: 5 }, presence: true
     validates :body, length: { minimum: 20 }, presence: true
