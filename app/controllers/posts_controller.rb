@@ -27,6 +27,7 @@ class PostsController < ApplicationController
     @post.topic = @topic
     authorize @post
     if @post.save
+      @post.create_vote
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
 
      @post = Post.find(params[:id])
      authorize @post
-     if @post.update_attributes(post_params)
+     if @post.update_attribute(post_params)
        flash[:notice] = "Post was updated."
        redirect_to [@topic, @post]
      else
