@@ -1,4 +1,4 @@
-class FavoriteMailer < ActionMailer::Base
+class FavoriteMailer < Mail::Message
   default from: "admin@example.com"
    def new_comment(user, post, comment)
  
