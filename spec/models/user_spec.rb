@@ -5,17 +5,17 @@ require 'rails_helper'
    include TestFactories
  
    describe "#favorited(post)" do
-    before do
-      @post = associated_post
-      @user = authenticated_user
-    end
+    let(:post) { associated_post }
+    let(:user) { authenticated_user}
+    let(:favorited_post) { user.favorited(post)}
+
      it "returns `nil` if the user has not favorited the post" do
-      expect(@user.favorited(@post)).to eq(nil)
+      expect(favorited_post).to eq(nil)
      end
  
      it "returns the appropriate favorite if it exists" do
-      favorite = @user.favorites.create(post: @post)
-      expect(@user.favorited(@post)).to eq(favorite)
+       favorite = user.favorites.create(post: post)
+       expect(favorited_post).to eq(favorite)
      end
    end
  end
