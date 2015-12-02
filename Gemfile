@@ -59,6 +59,7 @@ gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
+gem 'newrelic_rpm'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
