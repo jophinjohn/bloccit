@@ -60,9 +60,11 @@ gem 'mini_magick', '~> 3.5.0'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 gem 'newrelic_rpm'
+
 gem 'puma', group: :production
 gem 'thin', group: :development
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
 end
