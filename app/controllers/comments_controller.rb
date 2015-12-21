@@ -33,12 +33,10 @@ class CommentsController < ApplicationController
     authorize @comment
     if @comment.save
       flash[:notice] = "Comment saved successfully."
-      redirect_to [@topic, @post]
-      
+
     else
       flash[:error] = "Comment failed to save."
-      redirect_to [@topic, @post]
-      
+
     end
   end
 
@@ -47,6 +45,10 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body)
+  end
+  respond_to do |format|
+       format.html
+       format.js
   end
 
 end
